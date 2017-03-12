@@ -56,4 +56,10 @@ Download IntelliJ IDEA CE from www.jetbrains.com/idea/download/.
 
 That's it. Now, you can launch IntelliJ from Ubuntu dash.
 ====================================================================
+Golang Interface application:
+http://jordanorelli.com/post/32665860244/how-to-use-interfaces-in-go
+
+
+
+
 
