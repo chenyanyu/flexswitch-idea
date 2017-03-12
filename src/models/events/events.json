@@ -1,0 +1,2889 @@
+{
+	"DaemonEvents" : [
+		{
+			"DaemonId" : 1,
+			"DaemonName" : "ASICD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId" : 1,
+					"EventName" : "PortOperStateUp",
+					"Description" : "Port Operational State UP Event",
+					"SrcObjName" : "Port",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 2,
+					"EventName" : "PortOperStateDown",
+					"Description" : "Port Operational State DOWN Event",
+					"SrcObjName" : "Port",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 1,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 3,
+					"EventName": "VlanOperStateUp",
+					"Description" : "Vlan Operational State UP Event",
+					"SrcObjName" : "Vlan",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 4,
+					"EventName": "VlanOperStateDown",
+					"Description" : "Vlan Operational State DOWN Event",
+					"SrcObjName" : "Vlan",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 3,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 5,
+					"EventName": "IPv4IntfOperStateUp",
+					"Description" : "IPv4 Interface Operational State UP Event",
+					"SrcObjName" : "IPv4Intf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 6,
+					"EventName": "IPv4IntfOperStateDown",
+					"Description" : "IPv4 Interface Operational State DOWN Event",
+					"SrcObjName" : "IPv4Intf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 5,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 7,
+					"EventName": "IPv6IntfOperStateUp",
+					"Description" : "IPv6 Interface Operational State UP Event",
+					"SrcObjName" : "IPv6Intf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 8,
+					"EventName": "IPv6IntfOperStateDown",
+					"Description" : "IPv6 Interface Operational State DOWN Event",
+					"SrcObjName" : "IPv6Intf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 7,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 9,
+					"EventName": "TemperatureHighAlarm",
+					"Description" : "Asic temperature high alarm",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 10,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 10,
+					"EventName": "TemperatureHighAlarmClear",
+					"Description" : "Asic temperature high alarm cleared",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 11,
+					"EventName": "TemperatureHighWarn",
+					"Description" : "Asic temperature high warning",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 12,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 12,
+					"EventName": "TemperatureHighWarnClear",
+					"Description" : "Asic temperature high warning cleared",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 13,
+					"EventName": "TemperatureLowAlarm",
+					"Description" : "Asic temperature low alarm",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 14,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 14,
+					"EventName": "TemperatureHighAlarmClear",
+					"Description" : "Asic temperature low alarm cleared",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 15,
+					"EventName": "TemperatureHighWarn",
+					"Description" : "Asic temperature low warning",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 16,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 16,
+					"EventName": "TemperatureHighWarnClear",
+					"Description" : "Asic temperature low warning cleared",
+					"SrcObjName" : "AsicGlobalPM",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                {
+                    "Description": "Ethernet interface Under Size Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 17, 
+                    "EventName": "EthIfUnderSizePktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 18, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 18, 
+                    "EventName": "EthIfUnderSizePktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 19, 
+                    "EventName": "EthIfUnderSizePktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 20, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 20, 
+                    "EventName": "EthIfUnderSizePktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 21, 
+                    "EventName": "EthIfUnderSizePktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 22, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 22, 
+                    "EventName": "EthIfUnderSizePktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 23, 
+                    "EventName": "EthIfUnderSizePktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 24, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Under Size Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 24, 
+                    "EventName": "EthIfUnderSizePktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 25, 
+                    "EventName": "EthIfOverSizePktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 26, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 26, 
+                    "EventName": "EthIfOverSizePktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 27, 
+                    "EventName": "EthIfOverSizePktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 28, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 28, 
+                    "EventName": "EthIfOverSizePktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 29, 
+                    "EventName": "EthIfOverSizePktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 30, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 30, 
+                    "EventName": "EthIfOverSizePktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 31, 
+                    "EventName": "EthIfOverSizePktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 32, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Over Size Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 32, 
+                    "EventName": "EthIfOverSizePktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 33, 
+                    "EventName": "EthIfFragmentedPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 34, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 34, 
+                    "EventName": "EthIfFragmentedPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 35, 
+                    "EventName": "EthIfFragmentedPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 36, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 36, 
+                    "EventName": "EthIfFragmentedPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 37, 
+                    "EventName": "EthIfFragmentedPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 38, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 38, 
+                    "EventName": "EthIfFragmentedPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 39, 
+                    "EventName": "EthIfFragmentedPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 40, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Fragmented Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 40, 
+                    "EventName": "EthIfFragmentedPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 41, 
+                    "EventName": "EthIfCRCAlignErrHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 42, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 42, 
+                    "EventName": "EthIfCRCAlignErrHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 43, 
+                    "EventName": "EthIfCRCAlignErrHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 44, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 44, 
+                    "EventName": "EthIfCRCAlignErrHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 45, 
+                    "EventName": "EthIfCRCAlignErrLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 46, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 46, 
+                    "EventName": "EthIfCRCAlignErrLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 47, 
+                    "EventName": "EthIfCRCAlignErrLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 48, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface CRC Align Err Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 48, 
+                    "EventName": "EthIfCRCAlignErrLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 49, 
+                    "EventName": "EthIfJabberFramesHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 50, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 50, 
+                    "EventName": "EthIfJabberFramesHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 51, 
+                    "EventName": "EthIfJabberFramesHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 52, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 52, 
+                    "EventName": "EthIfJabberFramesHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 53, 
+                    "EventName": "EthIfJabberFramesLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 54, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 54, 
+                    "EventName": "EthIfJabberFramesLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 55, 
+                    "EventName": "EthIfJabberFramesLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 56, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Jabber Frames Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 56, 
+                    "EventName": "EthIfJabberFramesLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 57, 
+                    "EventName": "EthIfEthernetPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 58, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 58, 
+                    "EventName": "EthIfEthernetPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 59, 
+                    "EventName": "EthIfEthernetPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 60, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 60, 
+                    "EventName": "EthIfEthernetPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 61, 
+                    "EventName": "EthIfEthernetPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 62, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 62, 
+                    "EventName": "EthIfEthernetPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 63, 
+                    "EventName": "EthIfEthernetPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 64, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface Ethernet Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 64, 
+                    "EventName": "EthIfEthernetPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 65, 
+                    "EventName": "EthIfMCPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 66, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 66, 
+                    "EventName": "EthIfMCPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 67, 
+                    "EventName": "EthIfMCPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 68, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 68, 
+                    "EventName": "EthIfMCPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 69, 
+                    "EventName": "EthIfMCPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 70, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 70, 
+                    "EventName": "EthIfMCPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 71, 
+                    "EventName": "EthIfMCPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 72, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface MC Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 72, 
+                    "EventName": "EthIfMCPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 73, 
+                    "EventName": "EthIfBCPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 74, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 74, 
+                    "EventName": "EthIfBCPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 75, 
+                    "EventName": "EthIfBCPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 76, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 76, 
+                    "EventName": "EthIfBCPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 77, 
+                    "EventName": "EthIfBCPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 78, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 78, 
+                    "EventName": "EthIfBCPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 79, 
+                    "EventName": "EthIfBCPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 80, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface BC Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 80, 
+                    "EventName": "EthIfBCPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 81, 
+                    "EventName": "EthIf64BOrLessPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 82, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 82, 
+                    "EventName": "EthIf64BOrLessPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 83, 
+                    "EventName": "EthIf64BOrLessPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 84, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 84, 
+                    "EventName": "EthIf64BOrLessPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 85, 
+                    "EventName": "EthIf64BOrLessPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 86, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 86, 
+                    "EventName": "EthIf64BOrLessPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 87, 
+                    "EventName": "EthIf64BOrLessPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 88, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 64 Bytes Or Less Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 88, 
+                    "EventName": "EthIf64BOrLessPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 89, 
+                    "EventName": "EthIf65BTo127BPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 90, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 90, 
+                    "EventName": "EthIf65BTo127BPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 91, 
+                    "EventName": "EthIf65BTo127BPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 92, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 92, 
+                    "EventName": "EthIf65BTo127BPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 93, 
+                    "EventName": "EthIf65BTo127BPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 94, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 94, 
+                    "EventName": "EthIf65BTo127BPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 95, 
+                    "EventName": "EthIf65BTo127BPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 96, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 65 Bytes To127 Bytes Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 96, 
+                    "EventName": "EthIf65BTo127BPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 97, 
+                    "EventName": "EthIf128BTo255BPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 98, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 98, 
+                    "EventName": "EthIf128BTo255BPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 99, 
+                    "EventName": "EthIf128BTo255BPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 100, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 100, 
+                    "EventName": "EthIf128BTo255BPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 101, 
+                    "EventName": "EthIf128BTo255BPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 102, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 102, 
+                    "EventName": "EthIf128BTo255BPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 103, 
+                    "EventName": "EthIf128BTo255BPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 104, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 128 Bytes To255 Bytes Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 104, 
+                    "EventName": "EthIf128BTo255BPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 105, 
+                    "EventName": "EthIf256BTo511BPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 106, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 106, 
+                    "EventName": "EthIf256BTo511BPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 107, 
+                    "EventName": "EthIf256BTo511BPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 108, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 108, 
+                    "EventName": "EthIf256BTo511BPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 109, 
+                    "EventName": "EthIf256BTo511BPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 110, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 110, 
+                    "EventName": "EthIf256BTo511BPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 111, 
+                    "EventName": "EthIf256BTo511BPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 112, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 256 Bytes To511 Bytes Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 112, 
+                    "EventName": "EthIf256BTo511BPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 113, 
+                    "EventName": "EthIf512BTo1023BPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 114, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 114, 
+                    "EventName": "EthIf512BTo1023BPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 115, 
+                    "EventName": "EthIf512BTo1023BPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 116, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 116, 
+                    "EventName": "EthIf512BTo1023BPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 117, 
+                    "EventName": "EthIf512BTo1023BPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 118, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 118, 
+                    "EventName": "EthIf512BTo1023BPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 119, 
+                    "EventName": "EthIf512BTo1023BPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 120, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 512 Bytes To1023 Bytes Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 120, 
+                    "EventName": "EthIf512BTo1023BPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts High Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 121, 
+                    "EventName": "EthIf1024BTo1518BPktsHighAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 122, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts High Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 122, 
+                    "EventName": "EthIf1024BTo1518BPktsHighAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts High Warn", 
+                    "EventEnable": true, 
+                    "EventId": 123, 
+                    "EventName": "EthIf1024BTo1518BPktsHighWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 124, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts High Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 124, 
+                    "EventName": "EthIf1024BTo1518BPktsHighWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts Low Alarm", 
+                    "EventEnable": true, 
+                    "EventId": 125, 
+                    "EventName": "EthIf1024BTo1518BPktsLowAlarm", 
+                    "Fault": {
+                        "AlarmSeverity": "Critical", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 126, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts Low Alarm Clear", 
+                    "EventEnable": true, 
+                    "EventId": 126, 
+                    "EventName": "EthIf1024BTo1518BPktsLowAlarmClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts Low Warn", 
+                    "EventEnable": true, 
+                    "EventId": 127, 
+                    "EventName": "EthIf1024BTo1518BPktsLowWarn", 
+                    "Fault": {
+                        "AlarmSeverity": "Major", 
+                        "ClearingDaemonId": 1, 
+                        "ClearingEventId": 128, 
+                        "RaiseFault": true
+                    }, 
+                    "IsFault": true, 
+                    "SrcObjName": "EthernetPM"
+                },
+                {
+                    "Description": "Ethernet interface 1024 Bytes To1518 Bytes Pkts Low Warn Clear", 
+                    "EventEnable": true, 
+                    "EventId": 128, 
+                    "EventName": "EthIf1024BTo1518BPktsLowWarnClear", 
+                    "IsFault": false, 
+                    "SrcObjName": "EthernetPM"
+                }
+			]
+		},
+		{
+			"DaemonId" : 2,
+			"DaemonName" : "BGPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId" : 1,
+					"EventName" : "BGPNeighborStateChange",
+					"Description" : "BGP Neighbor State Change",
+					"SrcObjName" : "BGPNeighbor",
+					"EventEnable" : true,
+					"IsFault" : false
+				}
+			]
+		},
+		{
+			"DaemonId" : 3,
+			"DaemonName" : "RIBD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 4,
+			"DaemonName" : "ARPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId" : 1,
+					"EventName" : "ArpEntryLearned",
+					"Description" : "ARP entry learned",
+					"SrcObjName" : "ArpEntry",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 2,
+					"EventName" : "ArpEntryDeleted",
+					"Description" : "ARP entry deleted",
+					"SrcObjName" : "ArpEntry",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 3,
+					"EventName" : "ArpEntryUpdated",
+					"Description" : "ARP entry updated",
+					"SrcObjName" : "ArpEntry",
+					"EventEnable" : false,
+					"IsFault" : false
+				}
+			]
+		},
+		{
+			"DaemonId" : 5,
+			"DaemonName" : "LACPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 6,
+			"DaemonName" : "OSPFD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 7,
+			"DaemonName" : "STPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 8,
+			"DaemonName" : "DHCPRELAYD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 9,
+			"DaemonName" : "BFDD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 10,
+			"DaemonName" : "VRRPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 11,
+			"DaemonName" : "SYSD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 12,
+			"DaemonName" : "LLDPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId" : 1,
+					"EventName" : "NeighborLearned",
+					"Description" : "LLDP Neighbor learned Information",
+					"SrcObjName" : "LLDPIntfKey",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                                {
+					"EventId" : 2,
+					"EventName" : "NeighborUpdated",
+					"Description" : "LLDP Neighbor learned Information Updated",
+					"SrcObjName" : "LLDPIntfKey",
+					"EventEnable" : true,
+					"IsFault" : false
+
+                                },
+                                {
+					"EventId" : 3,
+					"EventName" : "NeighborRemoved",
+					"Description" : "LLDP Neighbor Information Removed",
+					"SrcObjName" : "LLDPIntfKey",
+					"EventEnable" : true,
+					"IsFault" : false
+                                }
+
+			]
+		},
+		{
+			"DaemonId" : 13,
+			"DaemonName" : "VXLAND",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 14,
+			"DaemonName" : "DHCPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+			]
+		},
+		{
+			"DaemonId" : 15,
+			"DaemonName" : "opticd",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId" : 0,
+					"EventName" : "TempHiAlarm",
+					"Description" : "DWDM Module temperature high alarm",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 1,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 1,
+					"EventName" : "TempHiAlarmClear",
+					"Description" : "DWDM Module temperature high alarm cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 2,
+					"EventName" : "TempHiWarn",
+					"Description" : "DWDM Module temperature high warning",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 3,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 3,
+					"EventName" : "TempHiWarnClear",
+					"Description" : "DWDM Module temperature high warning cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 4,
+					"EventName" : "TempLoAlarm",
+					"Description" : "DWDM Module temperature low alarm",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 5,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 5,
+					"EventName" : "TempLoAlarmClear",
+					"Description" : "DWDM Module temperature low alarm cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 6,
+					"EventName" : "TempLoWarn",
+					"Description" : "DWDM Module temperature low warning",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 7,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 7,
+					"EventName" : "TempLoWarnClear",
+					"Description" : "DWDM Module temperature low warning cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 8,
+					"EventName" : "VoltageHiAlarm",
+					"Description" : "DWDM Module voltage high alarm",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 9,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 9,
+					"EventName" : "VoltageHiAlarmClear",
+					"Description" : "DWDM Module voltage high alarm cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 10,
+					"EventName" : "VoltageHiWarn",
+					"Description" : "DWDM Module voltage high warning",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 11,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 11,
+					"EventName" : "VoltageHiWarnClear",
+					"Description" : "DWDM Module voltage high warning cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 12,
+					"EventName" : "VoltageLoAlarm",
+					"Description" : "DWDM Module voltage low alarm",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 13,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 13,
+					"EventName" : "VoltageLoAlarmClear",
+					"Description" : "DWDM Module voltage low alarm cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 14,
+					"EventName" : "VoltageLoWarn",
+					"Description" : "DWDM Module voltage low warning",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 15,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 15,
+					"EventName" : "VoltageLoWarnClear",
+					"Description" : "DWDM Module voltage low warning cleared",
+					"SrcObjName" : "DWDMModule",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 128,
+					"EventName" : "RXLOS",
+					"Description" : "DWDM Module Network interface RX loss of signal",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 129,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 129,
+					"EventName" : "RXLOSClear",
+					"Description" : "DWDM Module Network interface RX loss of signal deasserted",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 130,
+					"EventName" : "TxPwrHiAlarm",
+					"Description" : "DWDM Module network interface TX laser power high alarm",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 131,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 131,
+					"EventName" : "TxPwrHiAlarmClear",
+					"Description" : "DWDM Module network interface TX laser power high alarm cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 132,
+					"EventName" : "TxPwrHiWarn",
+					"Description" : "DWDM Module network interface TX laser power high warning",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 133,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Minor"
+					}
+				},
+				{
+					"EventId" : 133,
+					"EventName" : "TxPwrHiWarnClear",
+					"Description" : "DWDM Module network interface TX power high warning cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 134,
+					"EventName" : "TxPwrLoWarn",
+					"Description" : "DWDM Module network interface TX laser power low warning",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 135,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Minor"
+					}
+				},
+				{
+					"EventId" : 135,
+					"EventName" : "TxPwrLoWarnClear",
+					"Description" : "DWDM Module network interface TX laser power low warning cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 136,
+					"EventName" : "TxPwrLoAlarm",
+					"Description" : "DWDM Module network interface TX laser power low alarm",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 137,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 137,
+					"EventName" : "TxPwrLoAlarmClear",
+					"Description" : "DWDM Module network interface TX power low alarm cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 138,
+					"EventName" : "RxPwrHiAlarm",
+					"Description" : "DWDM Module network interface RX power high alarm",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 139,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 139,
+					"EventName" : "RxPwrHiAlarmClear",
+					"Description" : "DWDM Module network interface RX power high alarm cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+		                {
+					"EventId" : 140,
+					"EventName" : "RxPwrHiWarn",
+					"Description" : "DWDM Module network interface RX power high warning",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 141,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Minor"
+					}
+				},
+				{
+					"EventId" : 141,
+					"EventName" : "RxPwrHiWarnClear",
+					"Description" : "DWDM Module network interface TX power high warning cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+               			{
+					"EventId" : 142,
+					"EventName" : "RxPwrLoWarn",
+					"Description" : "DWDM Module network interface RX power low warning",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 143,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Minor"
+					}
+				},
+				{
+					"EventId" : 143,
+					"EventName" : "RxPwrLoWarnClear",
+					"Description" : "DWDM Module network interface RX power low warning cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+                		{
+					"EventId" : 144,
+					"EventName" : "RxPwrLoAlarm",
+					"Description" : "DWDM Module network interface RX power low alarm",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 145,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 145,
+					"EventName" : "RxPwrLoAlarmClear",
+					"Description" : "DWDM Module network interface RX power low alarm cleared",
+					"SrcObjName" : "DWDMModuleNwIntf",
+					"EventEnable" : true,
+					"IsFault" : false
+				}
+			]
+		},
+		{
+			"DaemonId" : 16,
+			"DaemonName" : "PLATFORMD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId": 1,
+					"EventName": "FanHigherTCAAlarmClear",
+					"Description": "Fan speed higher alarm cleared",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": false
+				},
+				{
+					"EventId": 2,
+					"EventName": "FanHigherTCAAlarm",
+					"Description": "Fan speed has exceeded higher alarm threshold",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": true,
+					"Fault": {
+						"RaiseFault": true,
+						"ClearingEventId": 1,
+						"ClearingDaemonId": 16,
+						"AlarmSeverity": "Critical"
+					}
+				},
+				{
+					"EventId": 3,
+					"EventName": "FanHigherTCAWarnClear",
+					"Description": "Fan speed higher warning cleared",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": false
+				},
+				{
+					"EventId": 4,
+					"EventName": "FanHigherTCAWarn",
+					"Description": "Fan speed has exceeded higher warn threshold",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": true,
+					"Fault": {
+						"RaiseFault": true,
+						"ClearingEventId": 3,
+						"ClearingDaemonId": 16,
+						"AlarmSeverity": "Major"
+					}
+				},
+				{
+					"EventId": 5,
+					"EventName": "FanLowerTCAAlarmClear",
+					"Description": "Fan speed lower alarm cleared",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": false
+				},
+				{
+					"EventId": 6,
+					"EventName": "FanLowerTCAAlarm",
+					"Description": "Fan speed is below lower alarm threshold",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": true,
+					"Fault": {
+						"RaiseFault": true,
+						"ClearingEventId": 5,
+						"ClearingDaemonId": 16,
+						"AlarmSeverity": "Critical"
+					}
+				},
+				{
+					"EventId": 7,
+					"EventName": "FanLowerTCAWarnClear",
+					"Description": "Fan speed lower warning cleared",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": false
+				},
+				{
+					"EventId": 8,
+					"EventName": "FanLowerTCAWarn",
+					"Description": "Fan speed is below Lower warn threshold",
+					"SrcObjName": "FanSensor",
+					"EventEnable": true,
+					"IsFault": true,
+					"Fault": {
+						"RaiseFault": true,
+						"ClearingEventId": 7,
+						"ClearingDaemonId": 16,
+						"AlarmSeverity": "Major"
+					}
+				},
+                                {   
+                                        "EventId": 9,
+                                        "EventName": "TemperatureHigherTCAAlarmClear",
+                                        "Description": "Temperature higher alarm cleared",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 10,
+                                        "EventName": "TemperatureHigherTCAAlarm",
+                                        "Description": "Temperature has exceeded higher alarm threshold",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 9,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 11,
+                                        "EventName": "TemperatureHigherTCAWarnClear",
+                                        "Description": "Temperature higher warning cleared",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 12,
+                                        "EventName": "TemperatureHigherTCAWarn",
+                                        "Description": "Temperature has exceeded higher warn threshold",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 11,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 13,
+                                        "EventName": "TemperatureLowerTCAAlarmClear",
+                                        "Description": "Temperature lower alarm cleared",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 14,
+                                        "EventName": "TemperatureLowerTCAAlarm",
+                                        "Description": "Temperature is below lower alarm threshold",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 13,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 15,
+                                        "EventName": "TemperatureLowerTCAWarnClear",
+                                        "Description": "Temperature lower warning cleared",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 16,
+                                        "EventName": "TemperatureLowerTCAWarn",
+                                        "Description": "Temperature is below Lower warn threshold",
+                                        "SrcObjName": "TemperatureSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 15,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 17,
+                                        "EventName": "VoltageHigherTCAAlarmClear",
+                                        "Description": "Voltage higher alarm cleared",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 18,
+                                        "EventName": "VoltageHigherTCAAlarm",
+                                        "Description": "Voltage has exceeded higher alarm threshold",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 17,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 19,
+                                        "EventName": "VoltageHigherTCAWarnClear",
+                                        "Description": "Voltage higher warning cleared",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 20,
+                                        "EventName": "VoltageHigherTCAWarn",
+                                        "Description": "Voltage has exceeded higher warn threshold",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 19,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 21,
+                                        "EventName": "VoltageLowerTCAAlarmClear",
+                                        "Description": "Voltage lower alarm cleared",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 22,
+                                        "EventName": "VoltageLowerTCAAlarm",
+                                        "Description": "Voltage is below lower alarm threshold",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 21,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 23,
+                                        "EventName": "VoltageLowerTCAWarnClear",
+                                        "Description": "Voltage lower warning cleared",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 24,
+                                        "EventName": "VoltageLowerTCAWarn",
+                                        "Description": "Voltage is below Lower warn threshold",
+                                        "SrcObjName": "VoltageSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 23,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 25,
+                                        "EventName": "PowerConverterHigherTCAAlarmClear",
+                                        "Description": "PowerConverter higher alarm cleared",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 26,
+                                        "EventName": "PowerConverterHigherTCAAlarm",
+                                        "Description": "PowerConverter has exceeded higher alarm threshold",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 25,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 27,
+                                        "EventName": "PowerConverterHigherTCAWarnClear",
+                                        "Description": "PowerConverter higher warning cleared",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 28,
+                                        "EventName": "PowerConverterHigherTCAWarn",
+                                        "Description": "PowerConverter has exceeded higher warn threshold",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 27,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 29,
+                                        "EventName": "PowerConverterLowerTCAAlarmClear",
+                                        "Description": "PowerConverter lower alarm cleared",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 30,
+                                        "EventName": "PowerConverterLowerTCAAlarm",
+                                        "Description": "PowerConverter is below lower alarm threshold",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 29,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },  
+                                {   
+                                        "EventId": 31,
+                                        "EventName": "PowerConverterLowerTCAWarnClear",
+                                        "Description": "PowerConverter lower warning cleared",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 32,
+                                        "EventName": "PowerConverterLowerTCAWarn",
+                                        "Description": "PowerConverter is below Lower warn threshold",
+                                        "SrcObjName": "PowerConverterSensor",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 31,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 33,
+                                        "EventName": "QsfpTemperatureHigherTCAAlarmClear",
+                                        "Description": "Qsfp Temperature Higher Alarm cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 34,
+                                        "EventName": "QsfpTemperatureHigherTCAAlarm",
+                                        "Description": "Qsfp Temperature Higher threshold crossing alarm",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 33,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 35,
+                                        "EventName": "QsfpTemperatureHigherTCAWarnClear",
+                                        "Description": "Qsfp Temperature Higher Warn cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 36,
+                                        "EventName": "QsfpTemperatureHigherTCAWarn",
+                                        "Description": "Qsfp Temperature Higher threshold crossing warn",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 35,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 37,
+                                        "EventName": "QsfpTemperatureLowerTCAAlarmClear",
+                                        "Description": "Qsfp Temperature Lower Alarm cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 38,
+                                        "EventName": "QsfpTemperatureLowerTCAAlarm",
+                                        "Description": "Qsfp Temperature Lower threshold crossing alarm",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 37,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 39,
+                                        "EventName": "QsfpTemperatureLowerTCAWarnClear",
+                                        "Description": "Qsfp Temperature Lower Warn cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 40,
+                                        "EventName": "QsfpTemperatureLowerTCAWarn",
+                                        "Description": "Qsfp Temperature Lower threshold crossing warn",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 39,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 41,
+                                        "EventName": "QsfpVoltageHigherTCAAlarmClear",
+                                        "Description": "Qsfp Voltage Higher Alarm cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 42,
+                                        "EventName": "QsfpVoltageHigherTCAAlarm",
+                                        "Description": "Qsfp Voltage Higher threshold crossing alarm",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 41,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 43,
+                                        "EventName": "QsfpVoltageHigherTCAWarnClear",
+                                        "Description": "Qsfp Voltage Higher Warn cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 44,
+                                        "EventName": "QsfpVoltageHigherTCAWarn",
+                                        "Description": "Qsfp Voltage Higher threshold crossing warn",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 43,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 45,
+                                        "EventName": "QsfpVoltageLowerTCAAlarmClear",
+                                        "Description": "Qsfp Voltage Lower Alarm cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 46,
+                                        "EventName": "QsfpVoltageLowerTCAAlarm",
+                                        "Description": "Qsfp Voltage Lower threshold crossing alarm",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 45,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 47,
+                                        "EventName": "QsfpVoltageLowerTCAWarnClear",
+                                        "Description": "Qsfp Voltage Lower Warn cleared",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 48,
+                                        "EventName": "QsfpVoltageLowerTCAWarn",
+                                        "Description": "Qsfp Voltage Lower threshold crossing warn",
+                                        "SrcObjName": "Qsfp",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 47,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 49,
+                                        "EventName": "QsfpRXPowerHigherTCAAlarmClear",
+                                        "Description": "Qsfp RX Power Higher Alarm cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 50,
+                                        "EventName": "QsfpRXPowerHigherTCAAlarm",
+                                        "Description": "Qsfp RX Power Higher threshold crossing alarm",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 49,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 51,
+                                        "EventName": "QsfpRXPowerHigherTCAWarnClear",
+                                        "Description": "Qsfp RX Power Higher Warn cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 52,
+                                        "EventName": "QsfpRXPowerHigherTCAWarn",
+                                        "Description": "Qsfp RX Power Higher threshold crossing warn",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 51,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 53,
+                                        "EventName": "QsfpRXPowerLowerTCAAlarmClear",
+                                        "Description": "Qsfp RX Power Lower Alarm cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 54,
+                                        "EventName": "QsfpRXPowerLowerTCAAlarm",
+                                        "Description": "Qsfp RX Power Lower threshold crossing alarm",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 53,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 55,
+                                        "EventName": "QsfpRXPowerLowerTCAWarnClear",
+                                        "Description": "Qsfp RX Power Lower Warn cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 56,
+                                        "EventName": "QsfpRXPowerLowerTCAWarn",
+                                        "Description": "Qsfp RX Power Lower threshold crossing warn",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 55,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 57,
+                                        "EventName": "QsfpTXPowerHigherTCAAlarmClear",
+                                        "Description": "Qsfp TX Power Higher Alarm cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 58,
+                                        "EventName": "QsfpTXPowerHigherTCAAlarm",
+                                        "Description": "Qsfp TX Power Higher threshold crossing alarm",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 57,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 59,
+                                        "EventName": "QsfpTXPowerHigherTCAWarnClear",
+                                        "Description": "Qsfp TX Power Higher Warn cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 60,
+                                        "EventName": "QsfpTXPowerHigherTCAWarn",
+                                        "Description": "Qsfp TX Power Higher threshold crossing warn",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 59,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 61,
+                                        "EventName": "QsfpTXPowerLowerTCAAlarmClear",
+                                        "Description": "Qsfp TX Power Lower Alarm cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 62,
+                                        "EventName": "QsfpTXPowerLowerTCAAlarm",
+                                        "Description": "Qsfp TX Power Lower threshold crossing alarm",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 61,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 63,
+                                        "EventName": "QsfpTXPowerLowerTCAWarnClear",
+                                        "Description": "Qsfp TX Power Lower Warn cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 64,
+                                        "EventName": "QsfpTXPowerLowerTCAWarn",
+                                        "Description": "Qsfp TX Power Lower threshold crossing warn",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 63,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 65,
+                                        "EventName": "QsfpTXBiasHigherTCAAlarmClear",
+                                        "Description": "Qsfp TX Bias Higher Alarm cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 66,
+                                        "EventName": "QsfpTXBiasHigherTCAAlarm",
+                                        "Description": "Qsfp TX Bias Higher threshold crossing alarm",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 65,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 67,
+                                        "EventName": "QsfpTXBiasHigherTCAWarnClear",
+                                        "Description": "Qsfp TX Bias Higher Warn cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 68,
+                                        "EventName": "QsfpTXBiasHigherTCAWarn",
+                                        "Description": "Qsfp TX Bias Higher threshold crossing warn",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 67,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 69,
+                                        "EventName": "QsfpTXBiasLowerTCAAlarmClear",
+                                        "Description": "Qsfp TX Bias Lower Alarm cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 70,
+                                        "EventName": "QsfpTXBiasLowerTCAAlarm",
+                                        "Description": "Qsfp TX Bias Lower threshold crossing alarm",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 69,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Critical"
+                                        }   
+                                },
+                                {   
+                                        "EventId": 71,
+                                        "EventName": "QsfpTXBiasLowerTCAWarnClear",
+                                        "Description": "Qsfp TX Bias Lower Warn cleared",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": false
+                                },  
+                                {   
+                                        "EventId": 72,
+                                        "EventName": "QsfpTXBiasLowerTCAWarn",
+                                        "Description": "Qsfp TX Bias Lower threshold crossing warn",
+                                        "SrcObjName": "QsfpChannel",
+                                        "EventEnable": true,
+                                        "IsFault": true,
+                                        "Fault": {
+                                                "RaiseFault": true,
+                                                "ClearingEventId": 71,
+                                                "ClearingDaemonId": 16, 
+                                                "AlarmSeverity": "Major"
+                                        }   
+                                }
+			]
+		},
+		{
+			
+			"DaemonId" : 17,
+			"DaemonName" : "LACPD",
+			"DaemonEventEnable" : true,
+			"EventBufferSize" : 1000,
+			"EventList" : [
+				{
+					"EventId" : 1,
+					"EventName" : "LacpPortOperStateUp",
+					"Description" : "Lacp Port Operational State UP Event",
+					"SrcObjName" : "LaPortChannelIntfRefListState",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 2,
+					"EventName" : "PortOperStateDown",
+					"Description" : "Port Operational State DOWN Event",
+					"SrcObjName" : "LaPortChannelIntfRefListState",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 1,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 3,
+					"EventName": "LacpdEventPortPartnerInfoSync",
+					"Description" : "Lacp Actor/Partner Info In-Sync Event",
+					"SrcObjName" : "LaPortChannelIntfRefListState",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 4,
+					"EventName": "LacpdEventPortPartnerInfoMismatch",
+					"Description" : "Lacp Actor/Partner Info Mismatch Event",
+					"SrcObjName" : "LaPortChannelIntfRefListState",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 3,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 5,
+					"EventName": "LacpdEventGroupOperStateUp",
+					"Description" : "Lacp Group Oper state UP Event",
+					"SrcObjName" : "LaPortChannel",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 6,
+					"EventName": "LacpdEventGroupOperStateDown",
+					"Description" : "Lacp Group Oper state DOWN Event",
+					"SrcObjName" : "LaPortChannel",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 5,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 7,
+					"EventName": "LacpdEventDrcpNeighborInfoSync",
+					"Description" : "Drcp Neighbor Info In-Sync Event",
+					"SrcObjName" : "DistributedRelay",
+					"EventEnable" : true,
+					"IsFault" : false
+				},
+				{
+					"EventId" : 8,
+					"EventName": "LacpdEventPortPartnerInfoMismatch",
+					"Description" : "Drcp Neighbor Info Mismatch Event",
+					"SrcObjName" : "DistributedRelay",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 7,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Major"
+					}
+				},
+				{
+					"EventId" : 9,
+					"EventName": "LacpdEventDrcpIppLinkUp",
+					"Description" : "Drcp Ipp Link Oper State UP Event",
+					"SrcObjName" : "IppLinkState",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 10,
+						"ClearingDaemonId" : 1,
+						"AlarmSeverity" : "Critical"
+					}
+				},
+				{
+					"EventId" : 10,
+					"EventName" : "LacpdEventDrcpIppLinkDown",
+					"Description" : "Drcp Ipp Link Oper State DOWN Event",
+					"SrcObjName" : "IppLinkState",
+					"EventEnable" : true,
+					"IsFault" : true,
+					"Fault" : {
+						"RaiseFault" : true,
+						"ClearingEventId" : 11,
+						"ClearingDaemonId" : 15,
+						"AlarmSeverity" : "Major"
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/opx-flxSdk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxasicdstub" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxconfig" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxcps" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxinfra" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxl2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxl3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxmodels" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/opx-flxreltools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/utils" vcs="Git" />
+  </component>
+</project>

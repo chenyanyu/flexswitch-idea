@@ -1,0 +1,14 @@
+{
+"UserConfig" : {
+  "access": "w",
+  "owner": "confd",
+  "srcfile": "objects.go",
+  "multiplicity": "*"
+ },
+"UserState" : {
+  "access": "r",
+  "owner": "confd",
+  "srcfile": "ipaddrblock.go",
+  "multiplicity": "*"
+ }
+}

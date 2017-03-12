@@ -1,0 +1,405 @@
+module ldp {
+    namespace "urn:ietf:params:xml:ns:yang:ldp";
+    // replace with IANA namespace when assigned - urn:ietf:params:xml:ns:yang:1
+    prefix "ldp";
+  import ietf-inet-types {
+    prefix inet;
+  }
+    organization
+      "Huawei Technologies Co., Ltd.";
+    contact
+      "jescia.chenxia@huawei.com
+       lizhenbin@huawei.com";
+    description
+      "This YANG module defines the generic configuration
+     data for LDP, which is common across all of the vendor
+     implementations of the protocol. It is intended that the module
+     will be extended by vendors to define vendor-specific
+     LDP configuration parameters.";
+  revision 2014-08-16 {
+    description
+      "Initial revision.";
+  }
+
+  typedef ifName {
+        description "ifName is like ethernet1/1/1/1";
+        type string {
+            length "1..63";
+        }
+    }
+
+    typedef ldp-id {
+      type uint32;
+      description
+        "Typedef for LDP Router ID.";
+    }
+
+
+      container ldpGlobal {
+
+        list inst {
+           key ldp-id ;
+		  config true;
+           leaf ldp-id {
+             type ldp-id;
+             description
+              "LDP Router ID.";
+           }
+
+            leaf grEnable {
+                description
+                  "Specifies the LDP GR capability.
+                   Enabling or disabling of GR will cause the re-establishment of all LDP sessions.";
+                config "true";
+                type boolean;
+                default "false";
+            }
+            leaf reconnectTime {
+                description
+                  "Specifies the value of the LDP session reconnection timer.
+                   The value is in seconds.";
+                config "true";
+                default "300";
+                type uint32 {
+                    range "3..3600";
+                }
+            }
+            leaf recoveryTime {
+                description
+                  "Specifies the value of the LSP recovery timer (s).
+                   The value is in seconds.";
+                config "true";
+                default "300";
+                type uint32 {
+                    range "3..3600";
+                }
+            }
+            leaf peerLiveTime {
+                description
+                  "Specifies the value of the neighbor keeplive timer (s).
+                   The value is in seconds.";
+                config "true";
+                default "600";
+                type uint32 {
+                    range "3..3600";
+                }
+            }
+            leaf backOffInitTime {
+                description
+                  "Specifies the init value of the exponential backoff timer (s).
+                   The value is in seconds.";
+                config "true";
+                default "15";
+                type uint32 {
+                    range "5..2147483";
+                }
+            }
+            leaf backOffMaxTime {
+                description
+                  "Specifies the maximum value of the exponential backoff Timer(s).
+                   The value is in seconds.";
+                config "true";
+                default "120";
+                type uint32 {
+                    range "5..2147483";
+                }
+            }
+        }
+    }
+
+    container ldp {
+
+            list Inst {
+
+                key "vrfName";
+                max-elements "unbounded";
+                min-elements "0";
+                description "Specifies a list of LDP instances.";
+
+                leaf vrfName {
+                    description
+                      "Name of an LDP instance.
+                      If the name string is empty the instance means a public instance whose name is _public_.";
+                    config "true";
+                    //default "_public_";
+                    type string {
+                        length "0..32";
+                    }
+                }
+                leaf lsrid {
+                    description "LSR ID of an instance.";
+                    config "true";
+                    mandatory "true";
+                    type inet:ipv4-address;
+                }
+                leaf igpSyncDelayTime {
+                    description
+                      "Specifies the interval at which an interface waits to establish an LSP after an LDP session is set up.
+                       The value is in seconds.";
+                    config "true";
+                    default "10";
+                    type uint32 {
+                        range "0..65535";
+                    }
+                }
+                container Intf {
+
+                    list  local {
+
+                        key "ifName";
+                        max-elements "unbounded";
+                        min-elements "0";
+                        description "Specifies an LDP interface.";
+
+                        leaf ifName {
+                            description "Interface name.";
+                            config "true";
+                            type ifName;
+                        }
+                        leaf helloSendTime {
+                            description
+                              "Specifies the value of the Hello packet sending timer.
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "1..65535";
+                            }
+                        }
+                        leaf helloHoldTime {
+                            description
+                              "Specifies the interval value of the Hello hold timer.
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "3..65535";
+                            }
+                        }
+                        leaf keepaliveSendTime {
+                            description
+                              "Specifies the value of the Keepalive packet sending timer (s).
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "1..65535";
+                            }
+                        }
+                        leaf keepaliveHoldTime {
+                            description
+                              "Specifies the value of the Keepalive packet holding timer (s).
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "30..65535";
+                            }
+                        }
+                        leaf igpSyncDelayTime {
+                            description
+                              "Specifies an interval at which an interface waits to establish an LSP after an LDP session is set up.
+                               The value is in seconds.";
+                            config "true";
+                            type uint32 {
+                                range "0..65535";
+                            }
+                        }
+                        leaf transportAddrInterface {
+                            description "Configures an interface address to be used as the transport address.";
+                            config "true";
+                            type ifName;
+                        }
+
+                    }
+
+                }
+
+                container Remote {
+
+                    list Peer {
+
+                        key "remotePeerName";
+                        max-elements "unbounded";
+                        min-elements "0";
+                        description "Specifies a remote LDP neighbor.";
+
+                        leaf remotePeerName {
+                            description "Specifies the name of a remote neighbor.";
+                            config "true";
+                            type string {
+                                length "1..32";
+                            }
+                        }
+                        leaf remoteIp {
+                            description "Specifies the IPv4 address of a remote neighbor.";
+                            config "true";
+                            type inet:ipv4-address;
+                        }
+                        leaf helloSendTime {
+                            description
+                              "Specifies the value of the Hello packet sending timer.
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "1..65535";
+                            }
+                        }
+                        leaf helloHoldTime {
+                            description
+                              "Specifies the value of the Hello packet holding timer (s).
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "3..65535";
+                            }
+                        }
+                        leaf keepaliveSendTime {
+                            description
+                              "Specifies the value of the Keepalive packet sending timer.
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "1..65535";
+                            }
+                        }
+                        leaf keepaliveHoldTime {
+                            description
+                              "Specifies the value of the Keepalive holding timer.
+                               The value is in seconds.";
+                            config "true";
+                            type uint16 {
+                                range "30..65535";
+                            }
+                        }
+                        leaf igpSyncDelayTime {
+                            description
+                              "Specifies an interval at which an interface waits to establish an LSP after an LDP session is set up.
+                               The value is in seconds.";
+                            config "true";
+                            type uint32 {
+                                range "0..65535";
+                            }
+                        }
+
+                    }
+
+                }
+
+                container local {
+
+                    list Peer {
+
+                        key "peerid";
+                        max-elements "unbounded";
+                        min-elements "0";
+                        description "Specifies an LDP peer.";
+
+                        leaf peerid {
+                            description "Specifies an LDP peer ID.";
+                            config "true";
+                            type inet:ipv4-address;
+                        }
+                        leaf md5Password {
+                            description "Specifies an MD5 password.";
+                            config "true";
+                            type string {
+                                length "1..255";
+                            }
+                        }
+
+                    }
+
+                }
+
+                container Gtsm {
+
+                    list data {
+
+                        key "peerTransportAddr";
+                        max-elements "unbounded";
+                        min-elements "0";
+                        description "Specifies a GTSM security attribute.";
+
+                        leaf peerTransportAddr {
+                            description "Specifies a GTSM transport address.";
+                            config "true";
+                            type inet:ipv4-address;
+                        }
+                        leaf gtsmHops {
+                            description "Specifies the maximum number of GTSM hops. The value is an integer ranging from 1 to 255.";
+                            config "true";
+                            mandatory "true";
+                            type uint16 {
+                                range "1..255";
+                            }
+                        }
+                    }
+
+                }
+
+                container mldpP2mpTunnel {
+
+                    list data {
+
+                        key "tunnelName";
+                        max-elements "unbounded";
+                        min-elements "0";
+                        description "Specifies the mldp p2mp lsp configuration in the root node.";
+
+                        leaf tunnelName {
+                            description "Mldp p2mp tunnel name in root node which can be used by service.";
+                            config "true";
+                            type string {
+                                length "1..31";
+                            }
+                        }
+                        leaf rootIp {
+                            description "Specifies the root ip address of mldp p2mp lsp.";
+                            config "true";
+                            type inet:ipv4-address;
+                        }
+                        leaf p2mpLspId {
+                            description "Specifies the LSP ID of mldp p2mp lsp if the generic LSP identifier is a type of opaque value element.";
+                            config "true";
+                            type uint32 {
+                                range "1..8192";
+                            }
+                        }
+                    }
+
+                }
+
+                container mldpP2mpLeafLsps {
+
+                    list data {
+
+                        key "p2mpLspName";
+                        max-elements "unbounded";
+                        min-elements "0";
+                        description "Specifies the mldp p2mp lsp configuration in the leaf node.";
+
+                        leaf p2mpLspName {
+                            description "The name of mldp p2mp lsp configuration in the leaf node.";
+                            config "true";
+                            type string {
+                                length "1..31";
+                            }
+                        }
+                        leaf rootIp {
+                            description "Specifies the root ip address of mldp p2mp lsp.";
+                            config "true";
+                            type inet:ipv4-address;
+                        }
+                        leaf p2mpLspId {
+                            description "Specifies the LSP ID of mldp p2mp lsp if the generic LSP identifier is a type of opaque value element.";
+                            config "true";
+                            type uint32 {
+                                range "1..8192";
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+}
