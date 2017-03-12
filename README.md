@@ -24,3 +24,15 @@ Bookmarks: 					F11  // Shift + F11
     File structure: Cmd+F12 for OS X, Ctrl+F12 in Windows/Linux— Helps you navigate through the file structure.
     Find action: Shift+Cmd+A on OS X, Ctrl+Shift+A on Windows/Linux — Searches for actions by their names; especially useful when you don’t know the full action name.
 
+Evaluation fo MIPS I6400:
+
+golang
+GO compiler
+
+Test for GO network package
+GO test programs
+
+GO as system programming languange for sysd
+GO Flexswitch SDK?
+
+OPX Snaproute GO missing application and test in GO? we  can help some?
